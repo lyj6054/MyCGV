@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="com.mycgv.vo.*, com.mycgv.dao.*, java.util.*"%>
+<%
+	CgvBoardDAO dao=new CgvBoardDAO();
+	ArrayList<CgvBoardVO> list=dao.getList();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,66 +33,14 @@
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
+					<%for(CgvBoardVO vo : list){ %>
 					<tr>
-						<td>1</td>
-						<td><a href="board_content.jsp">도굴 재미 있나요??</a></td>
-						<td>2020.11.11</td>
-						<td>150</td>
+						<td><%=vo.getRno() %></td>
+						<td><a href="board_content.jsp?bid=<%=vo.getBid()%>"><%=vo.getBtitle() %></a></td>
+						<td><%=vo.getBdate() %></td>
+						<td><%=vo.getBhits() %></td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>9</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>[CGV인제] 임시 영업중단 안내</td>
-						<td>2020.11.11</td>
-						<td>71</td>
-					</tr>
+					<%} %>
 					<tr>
 						<td colspan="4"> << 1 2 3 4 5 6 7 8 9 10 >> </td>
 					</tr>

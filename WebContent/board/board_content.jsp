@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="com.mycgv.vo.*, com.mycgv.dao.*"%>
+<%
+	String bid = request.getParameter("bid");
+	CgvBoardDAO dao=new CgvBoardDAO();
+	CgvBoardVO vo=dao.getContent(bid);
+	dao.getUpdateHits(bid);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,23 +26,21 @@
 				<table class="board_content">
 					<tr>
 						<th>제목</th>
-						<td>도굴 재미 있나요??</td>
+						<td><%=vo.getBtitle() %></td>
 						<th>등록일</th>
-						<td>2020.11.11</td>
+						<td><%=vo.getBdate() %></td>
 						<th>조회수</th>
-						<td>150</td>
+						<td><%=vo.getBhits() %></td>
 					</tr>
 					<tr>
 						<td colspan="6">
-						<p>재미있어요~^-^<br>
-							이제훈 잘 생겼어요~<br><br><br>
-						</p>
+							<p><%=vo.getBcontent() %></p>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="6">
-							<a href="board_update.jsp"><button type="button"  class="btn_style">수정</button></a>
-							<a href="board_delete.jsp"><button type="button" class="btn_style">삭제</button></a>
+							<a href="board_update.jsp?bid=<%=bid%>"><button type="button"  class="btn_style">수정</button></a>
+							<a href="board_delete.jsp?bid=<%=bid%>"><button type="button" class="btn_style">삭제</button></a>
 							<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 						</td>
 					</tr>

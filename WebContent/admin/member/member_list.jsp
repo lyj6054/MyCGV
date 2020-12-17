@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="com.mycgv.dao.*, com.mycgv.vo.*,java.util.*"%>
+<%
+	 CgvMemberDAO dao = new CgvMemberDAO();
+	ArrayList<CgvMemberVO> list = dao.getList();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,87 +38,16 @@
 						<th>성별</th>
 						<th>가입일자</th>
 					</tr>
+					<% for(CgvMemberVO vo:list){ %>
 					<tr>
-						<td>1</td>
-						<td><a href="member_content.jsp">test@naver.com</a></td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
+						<td><%=vo.getRno() %></td>
+						<td><a href="member_content.jsp?id=<%=vo.getId()%>"><%=vo.getId() %></a></td>
+						<td><%=vo.getName() %></td>
+						<td><%=vo.getCp() %></td>
+						<td><%=vo.getGender() %></td>
+						<td><%=vo.getMdate() %></td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>9</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>test@naver.com</td>
-						<td>홍길동</td>
-						<td>010-1234-1234</td>
-						<td>남자</td>
-						<td>2020.11.12</td>
-					</tr>
-					
+					<% } %>
 					<tr>
 						<td colspan="6"> << 1 2 3 4 5 6 7 8 9 10 >> </td>
 					</tr>

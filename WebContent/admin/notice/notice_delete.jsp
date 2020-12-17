@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	String nid=request.getParameter("nid");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,12 +30,14 @@
 			<div>
 				<h1>공지사항</h1>
 					<form class="board_delete">
+					
 						<h3>정말로 삭제하시겠습니까?</h3>
 						<img src="../../images/delete.jpg" width="100" height="100">
 						<div>
-							<button type="button" class="btn_style">삭제완료</button>
-							<a href="notice_content.jsp"><button type="button"
-									class="btn_style">이전페이지로</button></a> <a href="notice_list.jsp"><button
+							<a href ="noticeDeleteProc.jsp?nid=<%=nid%>"><button type="button" class="btn_style">삭제완료</button></a>
+							<a href="notice_content.jsp?nid=<%=nid%>"><button type="button"
+									class="btn_style">이전페이지로</button></a>
+							 <a href="notice_list.jsp"><button
 									type="button" class="btn_style">목록으로</button></a>
 						</div>
 					</form>

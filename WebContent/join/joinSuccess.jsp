@@ -17,27 +17,19 @@
 	<div class="content">
 		<section class="section1">
 			<div>
-				<h1>게시판</h1>
-				<form name="boardWriteForm" action="boardWriteProc.jsp" method="post" class="board_write">
-					<ul>
-						<li>
-							<label>제목</label>
-							<input type="text" name="btitle" id="btitle">
+				<h1>회원가입</h1>				
+				<form name="joinForm" class="join">
+					<ul>  
+						<li >
+							<h3 class="success_div">회원가입에 성공하셨습니다.</h3>
+							<img class="success_div" src="../images/login_success.jpg" width="60%">;
 						</li>
 						<li>
-							<label>내용</label>
-							<textarea name="bcontent" ></textarea>
-						</li>
-						<li>
-							<label>파일첨부</label>
-							<input type="file" name="bfile">
-						</li>
-						<li>
-							<button type="button" class="btn_style" id="btnBoardWrite">등록</button>
-							<button type="reset" class="btn_style">취소</button>							
-							<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>							
+							<a href="../login/login.jsp"><button type="button" class="btn_style" >로그인</button></a>
+							<a href="../index.jsp"><button type="button" class="btn_style">메인페이지</button></a>
 						</li>
 					</ul>
+				
 				</form>
 			</div>
 		</section>		

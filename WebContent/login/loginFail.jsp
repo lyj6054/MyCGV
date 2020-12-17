@@ -17,27 +17,18 @@
 	<div class="content">
 		<section class="section1">
 			<div>
-				<h1>게시판</h1>
-				<form name="boardWriteForm" action="boardWriteProc.jsp" method="post" class="board_write">
+				<h1>로그인 실패</h1>
+				<form name="loginForm" class="join">
 					<ul>
 						<li>
-							<label>제목</label>
-							<input type="text" name="btitle" id="btitle">
+							<h3 class="fail_h3">로그인에 실패하셨습니다.</h3>
 						</li>
 						<li>
-							<label>내용</label>
-							<textarea name="bcontent" ></textarea>
-						</li>
-						<li>
-							<label>파일첨부</label>
-							<input type="file" name="bfile">
-						</li>
-						<li>
-							<button type="button" class="btn_style" id="btnBoardWrite">등록</button>
-							<button type="reset" class="btn_style">취소</button>							
-							<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>							
+							<a href="login.jsp"><button type="button" class="btn_style">로그인하기</button></a>
+							<a href="http://localhoest:9000/MyCGV/index.jsp"><button type="button" class="btn_style">메인페이지</button></a>
 						</li>
 					</ul>
+				
 				</form>
 			</div>
 		</section>		

@@ -18,7 +18,7 @@
 		<section class="section1">
 			<div>
 				<h1>회원가입</h1>				
-				<form name="joinForm" action="#" method="get" class="join">
+				<form name="joinForm" action="joinProc.jsp" method="get" class="join">
 				<div class="jtitle"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 					<ul>  
 						<li>
@@ -44,8 +44,8 @@
 						</li>
 						<li>
 							<label><span class="red">*</span>성별</label>
-							<input type="radio" name="gender"><span class="rchk">남자</span>
-							<input type="radio" name="gender"><span class="rchk">여자</span>
+							<input type="radio" name="gender"  value="남자"><span class="rchk">남자</span>
+							<input type="radio" name="gender"  value="여자"><span class="rchk">여자</span>
 						</li>
 						<li>
 							<label><span class="red">*</span>E-mail</label>
@@ -53,8 +53,8 @@
 						</li>
 						<li>
 							<label><span class="red">*</span>메일수신</label>
-							<input type="radio" name="email_agr" checked><span class="rchk">수신동의</span>
-							<input type="radio" name="email_agr"><span class="rchk">수신거부</span>
+							<input type="radio" name="email_agr" checked  value="on"><span class="rchk">수신동의</span>
+							<input type="radio" name="email_agr"  value="off"><span class="rchk">수신거부</span>
 						</li>
 						<li>
 							<label><span class="red">*</span>주소</label>
@@ -98,17 +98,17 @@
 						</li>
 						<li>
 							<label><span class="red">*</span>취미</label>
-							<input type="checkbox" name="hobby"><span class="rchk">스포츠</span> 					
-							<input type="checkbox" name="hobby"><span class="rchk">쇼핑</span> 				
-							<input type="checkbox" name="hobby"><span class="rchk">인터넷</span> 					
-							<input type="checkbox" name="hobby"><span class="rchk">여행</span> 				
-							<input type="checkbox" name="hobby"><span class="rchk">독서</span> 				
-							<input type="checkbox" name="hobby"><span class="rchk">영화감상</span> 					
-							<input type="checkbox" name="hobby"><span class="rchk">음악감상</span> 					
+							<input type="checkbox" name="hobby" value="스포츠"><span class="rchk">스포츠</span> 					
+							<input type="checkbox" name="hobby"  value="쇼핑"><span class="rchk">쇼핑</span> 				
+							<input type="checkbox" name="hobby" value="인터넷"><span class="rchk">인터넷</span> 					
+							<input type="checkbox" name="hobby"  value="여행"><span class="rchk">여행</span> 				
+							<input type="checkbox" name="hobby"  value="독서"><span class="rchk">독서</span> 				
+							<input type="checkbox" name="hobby"  value="영화감상"><span class="rchk">영화감상</span> 					
+							<input type="checkbox" name="hobby" value="음악감상"><span class="rchk">음악감상</span> 					
 						</li>						
 						<li>
 							<label>자기소개</label>
-							<textarea></textarea>
+							<textarea name="intro"></textarea>
 						</li>
 						<li>
 							<button type="button" class="btn_style" id="btnJoin">가입하기</button>

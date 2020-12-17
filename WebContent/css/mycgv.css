@@ -283,6 +283,7 @@ section.section1>div>form.login button {
 	font-size: 14px;
 	font-weight: 700;
 	color: white;
+	border-radius: 5px;
 }
 
 section.section1>div>form.login button:hover {
@@ -478,6 +479,10 @@ section.section1>div.mypage span {
 	table.admin_member_content  tr:first-child td, table.admin_notice_list td,
 	table.admin_notice_content tr:first-child td {
 	text-align: center;
+}
+
+table.admin_notice_list td:nth-child(2){
+	width: 320px;
 }
 
 table.admin_notice_list td:nth-child(2),table.board td:nth-child(2),table.notice_list td:nth-child(2){
@@ -679,3 +684,6 @@ div.content section#admin_section1 {
 	margin-left:155px;
 }
 
+.fail_h3, .success_div{
+	padding-left:130px;
+}

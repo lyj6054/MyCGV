@@ -26,7 +26,7 @@
 		<section class="section1" id="admin_section1">
 			<div>
 				<h1>공지사항</h1>
-				<form name="noticeWriteForm" action="#" method="get" class="admin_notice_write">
+				<form name="noticeWriteForm" action="noticeWriteProc.jsp" method="post" class="admin_notice_write">
 					<ul>
 						<li>
 							<label>제목</label>

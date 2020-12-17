@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="com.mycgv.vo.*,com.mycgv.dao.*"
+    %>
+<%
+	String nid= request.getParameter("nid");
+	CgvNoticeDAO dao= new CgvNoticeDAO();
+	CgvNoticeVO vo= dao.getContent(nid);
+	
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,20 +33,16 @@
 		<section class="section1"  id="admin_section1">
 			<div>
 				<h1>공지사항</h1>
-				<form name="noticeUpdateForm" action="#" method="get" class="admin_notice_update">
+				<form name="noticeUpdateForm" action="noticeUpdateProc.jsp" method="post" class="admin_notice_update">
+				<input type="hidden" name="nid" value="<%=vo.getNid() %>">
 					<ul>
 						<li>
 							<label>제목</label>
-							<input type="text" name="ntitle" value="[CGV인제] 임시 영업중단 안내">
+							<input type="text" name="ntitle" value="<%=vo.getNtitle()%>">
 						</li>
 						<li>
 							<label>내용</label>
-							<textarea rows="10" cols="50" name="ncontent"><p>안녕하십니까. CGV인제입니다.<br>
-								코로나19 확산으로 인해 극장의 영업을 중단 (11/11~)하게 되었습니다.<br>
-								극장 이용에 불편을 드려 죄송합니다.<br>
-								안심하고 이용할 수 있는 관람환경 조성에 최선을 다하겠습니다.<br><br>
-								※ 영업재개 일자는 추후에 홈페이지 공지 드리겠습니다. <br>
-							</p>
+							<textarea rows="10" cols="50" name="ncontent"><%=vo.getNcontent()%>
 							</textarea>
 						</li>
 						<li>
@@ -45,9 +50,9 @@
 							<input type="file" name="nfrile">
 						</li>
 						<li>
-							<button type="button" class="btn_style">수정완료</button>
+							<button type="submit" class="btn_style">수정완료</button>
 							<button type="reset" class="btn_style">취소</button>
-							<a href="notice_content.jsp" ><button type="button" class="btn_style">이전페이지</button></a>
+							<a href="notice_content.jsp?nid=<%=nid%>" ><button type="button" class="btn_style">이전페이지</button></a>
 							<a href="notice_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 						</li>
 					</ul>

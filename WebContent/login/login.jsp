@@ -18,7 +18,7 @@
 		<section class="section1">
 			<div>
 				<h1>로그인</h1>
-				<form name="loginForm" action="#" method="get" class="login">
+				<form name="loginForm" action="loginProc.jsp" method="post" class="login">
 					<ul>
 						<li>
 							<label><img src="../images/icon_id.png"></label>

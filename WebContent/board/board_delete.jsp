@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String bid=request.getParameter("bid");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,8 +23,8 @@
 					<h3>정말로 삭제하시겠습니까?</h3>
 					<img src="../images/delete.jpg" >
 					<div>
-						<button type="button" class="btn_style">삭제완료</button>
-						<a href="board_content.jsp"><button type="button" class="btn_style">이전페이지</button></a>
+						<a href="boardDeleteProc.jsp?bid=<%=bid%>"><button type="button" class="btn_style">삭제완료</button></a>
+						<a href="board_content.jsp?bid=<%=bid%>"><button type="button" class="btn_style">이전페이지</button></a>
 						<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 					</div>
 				</form>
